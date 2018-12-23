@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>支付页</title>
+
+  <link rel="stylesheet" href="../resource/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styleSheet/common/topBar.css">
+  <style type="text/css">
+    .text{
+      font: bold 60px/1.5 '微软雅黑';
+    }
+    div{
+      margin: 0;
+      padding: 0;
+    }
+    .hideMes{
+      display: none;
+    }
+  </style>
+</head>
+<body style='overflow:Scroll;overflow-x:hidden;'>
+<!-- 首页导航栏 -->
+<div class="navbar-top">
+  <div class="logo-container">
+    <div class="logo">
+    </div>
+    <div class="title">
+      <a href="/"><span>安悦商城</span></a>
+    </div>
+  </div>
+  <div id="in-login"> </div>
+  <ul id="un-login">
+    <li class="navbar-register"><a id="register" href="../page/register.html">免费注册</a></li>
+    <li class="navbar-login"><a  id="login-state" href="../page/login.html">亲，请登录</a></li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col-md-1" style="width:200px;height: 120px"></div>
+  <div class="col-md-3" style="width: 400px;height: 100px;margin-left: 20px">
+    <div class="text">安悦商城</div>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group btn-group-justified" role="group" aria-label="..." style="margin-top: 20px">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default active" >1. 确认订单</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">2. 订单显示</button>
+      </div>
+
+    </div>
+    <div class="progress" style="margin-top: 10px" >
+      <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="50" aria-valuemax="100" style="width: 50%;">
+        50%
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1" style="width:200px;height: 200px">
+    <span class="hideMes" id="orderId"></span>
+    <span class="hideMes" id="userId"></span>
+  </div>
+  <div class="col-md-8">
+    <div><pre>确认收货地址</pre></div>
+    <div>
+      <table class=" table table-hover" id="showAddress" >
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-top: 20px">
+  <div class="col-md-1" style="width:200px;height: 100px"></div>
+  <div class="col-md-4" style="background-color: lightgoldenrodyellow;width: 860px">
+    <div style="margin-bottom: 20px"> <span style="color: black;">确认订单信息</span></div>
+    <div style="margin-top: 8px">
+    </div>
+    <table id="commShow" class="table table-bordered" style="text-align: center">
+      <tr>
+        <td>商品名</td>
+        <td>颜色</td>
+        <td>尺寸</td>
+        <td>单价</td>
+        <td>数量</td>
+        <td>小计</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-1" style="width:200px;"></div>
+  <div style="margin-left: 620px;margin-top: 10px;border:1px solid red;height: auto;width: 440px">
+    <div style="margin-left: 100px;margin-top: 20px ">实付款：<span style="color:red;font-size: 20px;" id="sum">￥</span></div>
+  </div>
+  <div class="alert alert-warning" role="alert" style="width: 200px;background: red;margin-top: 10px;margin-left: 850px;"><a href="" id="submit" style="color: white;font-size: 20px;margin-left: 50px">提交订单</a></div>
+
+</div>
+<script src="../resource/jquery/jquery-3.3.1.min.js"></script>
+<script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+<script src="../javaScript/util/resolveToken.js"></script>
+<script src="../javaScript/buy/buyGoods.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="../resource/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styleSheet/order/order.css">
+    <link rel="stylesheet" href="../styleSheet/common/topBar.css">
+</head>
+<body>
+
+<div class="navbar-top">
+    <div class="logo-container">
+        <div class="logo">
+        </div>
+        <div class="title">
+            <a href="/"><span>安悦商城</span></a>
+        </div>
+    </div>
+    <div id="in-login"> </div>
+    <ul id="un-login">
+        <li class="navbar-register"><a id="register" href="../page/register.html">免费注册</a></li>
+        <li class="navbar-login"><a  id="login-state" href="../page/login.html">亲，请登录</a></li>
+    </ul>
+</div>
+
+<div class="boughtDiv">
+    <div class="orderType">
+        <div class="selectedOrderType"><a href="#nowhere" orderstatus="all">所有订单</a></div>
+        <div class=""><a href="#nowhere" orderstatus="waitPay">待付款</a></div>
+        <div class=""><a href="#nowhere" orderstatus="waitDelivery">失败订单</a></div>
+        <div class=""><a href="#nowhere" orderstatus="waitConfirm">待收货</a></div>
+        <div class=""><a class="noRightborder" href="#nowhere" orderstatus="waitReview">待评价</a></div>
+        <div class="orderTypeLastOne"><a class="noRightborder"> </a></div>
+    </div>
+    <div class="orderListTitle">
+        <table class="orderListTitleTable">
+            <tbody><tr>
+                <td>宝贝</td>
+                <td width="100px">单价</td>
+                <td width="100px">数量</td>
+                <td width="120px">型号</td>
+                <td width="100px">交易操作</td>
+            </tr>
+            </tbody></table>
+    </div>
+    <div class="orderListItem">
+        <!--循环创建订单-->
+        <% for(let i = 0;i<data.length;i++){
+        if(data[i]['orderStatus'] === 0){%>
+        <!--超时或取消订单-->
+        <table oid="944" orderstatus="waitDelivery" class="orderListItemTable" style="display: table;">
+            <tbody>
+            <tr class="orderListItemFirstTR">
+                <td colspan="2">
+                    <span id="orderId"><%=data[i]['id']%></span>
+                    <b>订单时间 : <%=new Date(data[i]['orderTime'])%></b>
+                </td>
+                <td class="orderItemDeleteTD">
+                    <a href="#nowhere" oid="944" class="deleteOrderLink">
+                        <!--<span class="orderListItemDelete glyphicon glyphicon-trash"></span>-->
+                    </a>
+                </td>
+            </tr>
+            <%
+                var itemList = data[i]['itemList'];
+            for(let j=0;j < itemList.length;j++){
+            %>
+            <tr class="orderItemProductInfoPartTR">
+                <td class="orderItemProductInfoPartTD"><img width="80" height="80" src="<%=itemList[j]['picAddress']%>"></td>
+                <td class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductLinkOutDiv">
+                        <a href="#nowhere"><%=itemList[j]['commName']%></a>
+                    </div>
+                </td>
+                <td width="100px" class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductPrice">￥<%=itemList[j]['itemPrice']%></div>
+                </td>
+                <td width="100px" valign="top" class="orderListItemNumberTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="orderListItemNumber"><%=itemList[j]['itemNum']%></span>
+                </td>
+                <td width="120px" valign="top" class="orderListItemProductRealPriceTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="color"><%=itemList[j]['commColor']%></span>
+                    <span class="size"><%=itemList[j]['commSize']%></span>
+                </td>
+                <% if(j === 0){%>
+                <td width="100px" valign="top" class="orderListItemButtonTD orderItemOrderInfoPartTD" rowspan="<%=itemList.length%>">
+                    <span>超时/取消订单</span>
+                </td>
+                <%}%>
+            </tr>
+            <% } %>
+            </tbody></table>
+
+        <% }
+        else if(data[i]['orderStatus'] === 1){%>
+        <!--待支付-->
+        <table oid="943" orderstatus="waitPay" class="orderListItemTable" style="display: table;">
+            <tbody><tr class="orderListItemFirstTR">
+                <td colspan="2">
+                    <span id="orderId"><%=data[i]['id']%></span>
+                    <b>订单时间 : <%=new Date(data[i]['orderTime'])%></b>
+                </td>
+                <td colspan="3" class="storeName"></td>
+                <td class="orderItemDeleteTD">
+                    <a href="" oid="943" class="deleteOrderLink" id="cancelBtn">
+                        <span class="orderListItemDelete glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+            <!--创建订单的每一个项-->
+            <%
+                itemList = data[i]['itemList'];
+            for(let j=0;j < itemList.length;j++){
+            %>
+            <tr class="orderItemProductInfoPartTR">
+                <td class="orderItemProductInfoPartTD"><img width="80" height="80" src="<%=itemList[j]['picAddress']%>"></td>
+                <td class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductLinkOutDiv">
+                        <a href="#nowhere"><%=itemList[j]['commName']%></a>
+                    </div>
+                </td>
+                <td width="100px" class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductPrice">￥<%=itemList[j]['itemPrice']%></div>
+                </td>
+                <td width="100px" valign="top" class="orderListItemNumberTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="orderListItemNumber"><%=itemList[j]['itemNum']%></span>
+                </td>
+                <td width="120px" valign="top" class="orderListItemProductRealPriceTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="color"><%=itemList[j]['commColor']%></span>
+                    <span class="size"><%=itemList[j]['commSize']%></span>
+                </td>
+                <% if(j === 0){%>
+                <td width="100px" valign="top" class="orderListItemButtonTD orderItemOrderInfoPartTD" rowspan="<%=itemList.length%>">
+                    <a href="#nowhere">
+                        <button class="orderListItemConfirm">付款</button>
+                    </a>
+                </td>
+                <%}%>
+            </tr>
+            <% } %>
+            </tbody></table>
+
+        <%}
+        else if(data[i]['orderStatus'] === 2){%>
+        <!--支付完成-->
+        <table oid="945" orderstatus="waitConfirm" class="orderListItemTable" style="display: table;">
+            <tbody><tr class="orderListItemFirstTR">
+                <td colspan="2">
+                    <span id="orderId"><%=data[i]['id']%></span>
+                    <b>订单时间 : <%=new Date(data[i]['orderTime'])%></b>
+                </td>
+                <td colspan="3" class="storeName"><a href="#"></a></td>
+                <td class="orderItemDeleteTD">
+                    <a href="#nowhere" oid="945" class="deleteOrderLink">
+                        <!--<span class="orderListItemDelete glyphicon glyphicon-trash"></span>-->
+                    </a>
+                </td>
+            </tr>
+            <%
+                itemList = data[i]['itemList'];
+            for(let j=0;j < itemList.length;j++){
+            %>
+            <tr class="orderItemProductInfoPartTR">
+                <td class="orderItemProductInfoPartTD"><img width="80" height="80" src="<%=itemList[j]['picAddress']%>"></td>
+                <td class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductLinkOutDiv">
+                        <a href="#nowhere"><%=itemList[j]['commName']%></a>
+                    </div>
+                </td>
+                <td width="100px" class="orderItemProductInfoPartTD">
+                    <div class="orderListItemProductPrice">￥<%=itemList[j]['itemPrice']%></div>
+                </td>
+                <td width="100px" valign="top" class="orderListItemNumberTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="orderListItemNumber"><%=itemList[j]['itemNum']%></span>
+                </td>
+                <td width="120px" valign="top" class="orderListItemProductRealPriceTD orderItemOrderInfoPartTD" rowspan="1">
+                    <span class="color"><%=itemList[j]['commColor']%></span>
+                    <span class="size"><%=itemList[j]['commSize']%></span>
+                </td>
+                <% if(j === 0){%>
+                <td width="100px" valign="top" class="orderListItemButtonTD orderItemOrderInfoPartTD" rowspan="<%=itemList.length%>">
+                    <a href="#nowhere">
+                        <button class="orderListItemConfirm">确认收货</button>
+                    </a>
+                </td>
+                <%}%>
+            </tr>
+            <% } %>
+            </tbody></table>
+        <%}
+        }%>
+    </div>
+</div>
+
+<script src="../resource/jquery/jquery-3.3.1.min.js"></script>
+<script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+<script src="../javaScript/util/resolveToken.js"></script>
+<script type="text/javascript" src="../javaScript/order/order.js"></script>
+</body>
+</html>
+

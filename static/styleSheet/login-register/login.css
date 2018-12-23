@@ -1,0 +1,88 @@
+.form-container{
+  background-size: cover;
+  background: url("../../resource/img/login-page/bg-login.jpg") no-repeat center center;
+  position: relative;
+}
+.login-form{
+  position: absolute;
+  width: 27%;
+  min-width: 350px;
+  padding: 13px;
+  right:60px;
+  top: 120px;
+  background: rgb(255,255,255);
+}
+.login-form form{
+  position: relative;
+  border-top: 1px silver solid;
+  margin-top: 10px;
+  padding-top: 40px;
+}
+.form-title{
+  font-weight: 700;
+  color: #e4393c;
+  text-align: center;
+}
+.form-group{
+  margin-bottom: 15px;
+}
+.form-group label{
+  font-size: 22px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  display: inline-block;
+  border: solid 1px gray;
+  position: absolute;
+}
+.form-group label i{
+  line-height: 38px;
+}
+.form-group input{
+  display: inline-block;
+  margin-left: 41px;
+  width: 300px;
+  background: transparent;
+  border: solid 1px gray;
+  height: 38px;
+}
+.form-group input:focus{
+  border: #e4393c 1px solid;
+  outline: none;
+}
+.form-group input[type=button]{
+  box-shadow: 2px 3px 3px #a18c81;
+  border: 0;
+  display: inline-block;
+  margin: 20px 0 25px;
+  width: 342px;
+  background: #e4393c;
+  height: 38px;
+  line-height: 31px;
+  color: #fff;
+  font-size: 20px;
+}
+.form-group input[type=button]:focus{
+  border: none;
+  outline: none;
+}
+.form-group input[type=button]:hover{
+  box-shadow: 1px 1px 1px #a18c81;
+}
+.iconfont{
+  font-size: 27px;
+}
+.tips{
+  position: absolute;
+  font-size: 12px;
+  color: #e4393c;
+  width: 100%;
+  top: 0;
+  margin-top: 3%;
+  text-align: center;
+}
+.tips i{
+  font-size: 13px;
+  margin-right: 10px;
+  color: #e4393c;
+}

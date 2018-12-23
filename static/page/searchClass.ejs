@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类 - <%= data.className %></title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../resource/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styleSheet/searchPage/searchPage.css">
+    <link rel="stylesheet" href="../styleSheet/common/topBar.css">
+</head>
+<body>
+
+<div class="navbar-top">
+    <div class="logo-container">
+        <div class="logo">
+        </div>
+        <div class="title">
+            <a href="/"><span>安悦商城</span></a> <%= data.className %>
+        </div>
+    </div>
+    <div id="in-login"> </div>
+    <ul id="un-login">
+        <li class="navbar-register"><a id="register" href="./register.html">免费注册</a></li>
+        <li class="navbar-login"><a  id="login-state" href="./login.html">亲，请登录</a></li>
+    </ul>
+</div>
+
+<!--查询到商品时-->
+<% if(data['goodsList'].length !== 0){ %>
+    <div class="floor-con">
+        <i class="color-mark"></i>
+        <div class="floor-name">
+            <div class="floor-title">
+                浏览结果
+            </div>
+        </div>
+        <div class="line-body">
+            <!--侧边栏-->
+            <div class="banner-con">
+                <a target="_blank" href="#">
+                    <img class="banner-img" src="../resource/img/man-wear/01.jpg" alt="推荐展示">
+                    <div class="detail-warp">
+                        <img src="../resource/img/floor-images/08.png" alt="更多信息">
+                    </div>
+                </a>
+            </div>
+            <div class="column-con">
+                <% for(let i=0; i < data['goodsList'].length;i++){ %>
+                    <a class="grid one-grid-price" target="_blank" href="../page/detail?goodId=<%= data['goodsList'][i]['commId']%>" style="text-decoration: none">
+                        <div class="floor-content-warp">
+                            <div class="floor-item-tag"></div>
+                            <img class="floor-item-img" src="<%=data['goodsList'][i]['pictureAddr']%>" alt="detailImg">
+                            <div class="floor-item-title"><%=data['goodsList'][i]['commName']%></div>
+                            <div class="floor-price">￥<%=data['goodsList'][i]['commPrice']%></div>
+                        </div>
+                    </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="divide-page">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous" id="pre-page-btn">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <% for(let i=1; i <= data['pageAll'];i++){
+                    if(i === data['pageNow']){
+                %>
+                    <li class="active"><a href="#" class="page-btn"><%=i%></a></li>
+                <%}else{%>
+                <li><a href="#" class="page-btn"><%=i%></a></li>
+                <%}}%>
+                <li>
+                    <a href="#" aria-label="Next" id="next-page-btn">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li>
+                <span>
+                    共<span class="allPageNum"><%=data['pageAll']%></span>页
+                </span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<%}else{%>
+    <div class="no-result">
+        <h3 style="text-align: center;">没有对应的商品，换个关键字试试吧</h3>
+    </div>
+<%}%>
+<script src="../resource/jquery/jquery-3.3.1.min.js"></script>
+<script src="../javaScript/util/resolveToken.js"></script>
+<script src="../javaScript/searchClass/searchClass.js"></script>
+</body>
+</html>

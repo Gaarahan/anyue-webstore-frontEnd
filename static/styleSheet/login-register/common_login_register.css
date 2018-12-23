@@ -1,0 +1,102 @@
+/*默认设置*/
+html,body{
+  margin: 0;
+  padding: 0;
+  height :100%;
+  width: 100%;
+}
+a:active,a:link,a:hover,a:visited{
+  text-decoration: none;
+  color: white;
+}
+input{border: none;}
+/*默认设置结束*/
+
+/*容器们*/
+.container{
+  padding: 0 10px;
+  min-width:600px;
+  min-height:650px;
+  height: 100%;
+}
+.navBar{
+  position: relative;
+  top: 0;
+  padding: 5px;
+  background: white;
+  height: 10%;
+  box-shadow: 0 3px 3px #c9cde5;
+}
+.form-container{
+  display: block;
+  height: 83%;
+  min-height: 550px;
+  position: relative;
+  margin-top: 1%;
+  box-shadow: 0 3px 3px #7d7f8e;
+  background: white;
+}
+/*容器结束*/
+
+/*导航栏*/
+.logo-container{
+  position: absolute;
+  display: inline-block;
+  left: 4%;
+}
+.logo{
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: url("../../resource/img/login-page/headPic.jpg") no-repeat;
+  background-size: cover;
+}
+.title{
+  float: left;
+}
+.tips-access{
+  position: absolute;
+  right:4%;
+  display: inline-block;
+}
+/*导航栏结束*/
+
+/*导航标题开始*/
+.title span{
+  float: left;
+  position:relative;
+  display: inline-block;
+  height: 100%;
+  line-height: 70px;
+  margin-left: 20px;
+}
+.title span:first-child{
+  font-size: 27px;
+  color: #e4393c;
+}
+.title span:last-child{
+  font-size: 23px;
+}
+/*导航标题结束*/
+
+/*  跳转按钮*/
+.btn-nav{
+  display: inline-block;
+  width: 120px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 21px;
+  color: #acb8a2;
+  text-align: center;
+}
+.btn-nav a{
+  display: inline-block;
+  width: 110px;
+  color: #9ea1b4;
+}
+.btn-nav a:hover{
+  color: #e4393c;
+  text-decoration: underline;
+}
+/*跳转按钮结束*/

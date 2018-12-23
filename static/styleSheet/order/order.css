@@ -1,0 +1,217 @@
+div.header{
+  margin:0;
+  padding:0;
+  background:#E5E5E5;
+  float: right;
+
+}
+div.header ul{
+  list-style-type:none;
+  padding-left: 583px;
+  height:25px;
+  background:#E5E5E5;
+
+}
+div.header ul li{
+  font-size:13px;
+  float:left;
+  text-align:center;
+  width:80px;
+  padding-top:5px;
+}
+div.header ul li a{
+  text-decoration:none;
+  color:#666;
+}
+div.header ul li a:hover{
+  color:#F00;
+}
+div.header ul #firstpage{
+  margin-left: -580px;
+}
+
+div.top{
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  background-color: #FF4500;
+}
+span.myAnyue{
+  font-size: 34px;
+  font-weight: 900;
+  font-family: STCaiyun;
+  color: #FFFFFF;
+  margin-left: 10px;
+  padding-top: 15px;
+  position: relative;
+  top: 10px;
+}
+div.topChoice{
+  list-style-type:none;
+  margin-left: 200px;
+  position: relative;
+  bottom: 25px;
+
+}
+div.topChoice a{
+  text-decoration:none;
+  color:#FFFFFF;
+  font-size: 16px;
+  margin-left: 50px;
+}
+
+div.boughtDiv{
+  width: 1013px;
+  margin: 10px auto;
+}
+div.orderType div{
+  border-bottom: 2px solid #E8E8E8;
+  float: left;
+}
+div.orderType a{
+  border-right: 1px solid #E8E8E8;
+  display:inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  padding: 0 20px;
+
+}
+div.orderType a:hover{
+  color: #C40000;
+}
+div.orderType div.selectedOrderType{
+  border-bottom: 2px solid #C40000;
+}
+div.orderType div.selectedOrderType a{
+  color: #C40000;
+}
+div.orderTypeLastOne{
+  float: none !important ;
+  height:35px;
+}
+a.noRightborder{
+  border-right-width:0;
+}
+table.orderListTitleTable{
+  border: 1px solid #E8E8E8;
+  width: 100%;
+  margin: 20px 0;
+  background-color: #F5F5F5;
+  text-align: center;
+  font-size:12px;
+}
+table.orderListTitleTable td{
+  padding: 12px 0;
+}
+
+table.orderListItemTable{
+  border: 2px solid #ECECEC;
+  width: 100%;
+  margin: 20px 0;
+  font-size:12px;
+}
+table.orderListItemTable:hover{
+  border: 2px solid #aaa;
+}
+table.orderListItemTable td{
+  vertical-align: middle;
+  padding: 8px 10px;
+}
+tr.orderListItemFirstTR{
+  background-color: #F1F1F1;
+}
+
+td.storeName a{
+  color: #363636;
+  width: 13px;
+}
+td.storeName a:hover{
+  color:  #B22222;
+}
+
+
+td.orderItemDeleteTD{
+  text-align: right;
+}
+span.orderListItemDelete{
+  display: inline-block;
+  margin: 0 10px;
+  color: #999999;
+  font-size: 16px;
+}
+div.orderListItemProductLinkOutDiv{
+  position: relative;
+  height: 80px;
+}
+
+div.orderListItemProductOriginalPrice{
+  color: #999999;
+  font-size: 14px;
+}
+div.orderListItemProductPrice{
+  color: #3C3C3C;
+  font-size: 14px;
+}
+td.orderListItemNumberTD{
+  text-align: center;
+}
+td.orderItemOrderInfoPartTD{
+  border: solid 1px #ECECEC;
+}
+span.orderListItemNumber{
+  color: #3C3C3C;
+}
+td.orderListItemProductRealPriceTD{
+  text-align: center;
+}
+div.orderListItemProductRealPrice{
+  color: #3C3C3C;
+  font-size: 14px;
+  font-weight: bold;
+}
+div.orderListItemPriceWithTransport{
+  color: #6C6C6C;
+  font-size: 12px;
+}
+td.orderListItemButtonTD{
+  text-align: center;
+}
+button.orderListItemReview{
+  border: 1px solid #DCDCDC;
+  background-color: #fff;
+  border-radius: 2px;
+  color: #3C3C3C;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+button.orderListItemReview:hover{
+  border-color: #C40000;
+  color: #C40000;
+}
+button.orderListItemConfirm{
+  background-color: #66B6FF;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-width: 0;
+  padding: 6px 12px;
+}
+button.orderListItemConfirm:hover{
+  background-color: #118ADB;
+}
+a{
+  color:#999;
+}
+a:hover{
+  text-decoration:none;
+  color: #C40000;
+}
+#orderId{
+  display: none;
+}
+
+

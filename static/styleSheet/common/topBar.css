@@ -1,0 +1,117 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+ul,ol{
+  list-style: none;
+}
+#in-login{
+  font-size: 21px;
+  line-height: 50px;
+  text-align: right;
+  margin-right: 40px;
+}
+#in-login span{
+  color: #e4393c;
+}
+#un-login{
+  display: block;
+}
+/*导航栏*/
+.logo-container{
+  position: absolute;
+  display: inline-block;
+  left: 4%;
+}
+.logo{
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("../../resource/img/login-page/headPic.jpg") no-repeat;
+  background-size: cover;
+}
+.title{
+  float: left;
+  font-size: 25px;
+  line-height: 50px;
+}
+/*导航标题开始*/
+.title span{
+  float: left;
+  position:relative;
+  display: inline-block;
+  height: 100%;
+  line-height: 50px;
+  margin-left: 20px;
+}
+.title span:first-child{
+  margin-right: 20px;
+  font-size: 27px;
+  color: #e4393c;
+}
+/*导航标题结束*/
+/*下拉菜单*/
+.login-menu{
+  padding: 0;
+  display:none;
+  position: absolute;
+  background: #f8f8f8;
+  width: 100px;
+  top: 50px;
+  right: 16px;
+  z-index: 1000;
+}
+.login-menu li{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.login-menu li a{
+  color: rgba(133, 103, 110, 0.66);
+}
+/*下拉菜单结束*/
+.navbar-top {
+  position:relative;
+  width: 100%;
+  height: 50px;
+  background-color: #d8d8d8;
+  min-width: 1230px;
+}
+.navbar-top #un-login li {
+  width: 120px;
+  height: 50px;
+  float: right;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+}
+.navbar-top .navbar-login a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: orangered;
+  /*margin-right: 40px;*/
+}
+.navbar-top .navbar-register a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #373637;
+  /*margin-right: 120px;*/
+}
+
+.navbar-top a:link {
+  text-decoration: none;
+}
+.navbar-top a:visited {
+  text-decoration: none;
+}
+.navbar-top a:hover {
+  text-decoration: none;
+  color: #e4393c;
+}

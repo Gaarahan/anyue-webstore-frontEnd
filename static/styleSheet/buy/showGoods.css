@@ -1,0 +1,175 @@
+ul{
+    display: inline-block;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+#header{
+    height: 60px;
+}
+#header ul{
+    margin-top: 10px;
+}
+#header li{
+    font-size: 30px;
+}
+#header li a{
+    color: lightgray;
+    text-decoration: none;
+}
+.icon {
+    display: inline-block;
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+.col-md-4 {
+    height: 400px;
+
+}
+
+.col-md-2 {
+    background-color: black;
+}
+
+#show {
+    padding: 0;
+    margin-top: 20px;
+    margin-left: -40px;
+}
+.box{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    position: relative;
+}
+.mask{
+    width: 200px;
+    height: 200px;
+    background: rgba(235,235,0,0.4);
+    position: absolute;
+
+    display: none;
+}
+.small{
+    position: relative;
+    cursor: move;
+}
+.big{
+    width: 450px;
+    height: 600px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 400px;
+    overflow: hidden;
+    display: none;
+    z-index: 2;
+}
+.big img{
+    /*transform: translate(10px,50px);*/
+    /*position: absolute;*/
+    left: 0;
+    top: 0;
+
+}
+.showImgs {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    list-style: none;
+}
+
+.showImgs img {
+    width: 70px;
+    height: 75px;
+}
+
+.table tr {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.table tr td {
+    width: 600px;
+    height: 50px;
+}
+.goodsSize{
+    display: inline-block;
+    padding:8px;margin-left: 20px;
+    border: 1px solid gray;
+}
+
+
+.showColors{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-left: 20px;
+}
+#showSuggest{
+    overflow: hidden;
+    width: 280px;
+    height: 420px;
+    top:0;
+}
+#page{
+    margin-top: 460px;
+    margin-left: 1060px;
+    width: 200px;
+    height: 100px;
+}
+#showInformation{
+    margin: 0;
+
+    width: 400px;
+}
+#showInformation td{
+    height: 40px;
+    width: 20px;
+}
+#showInformation  a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.active{
+    background-color: whitesmoke;
+    border-top:2px solid red;
+}
+#showDetail{
+    display: inline-block;
+    width: 700px;
+    margin-top: 0;
+    margin-left: -36px;
+}
+#showDetail li{
+    list-style: none;
+}
+#right{
+    display: inline-block;
+    width: 200px;
+    height: 4000px;
+    float: right;
+    background-color:rgba(144,144,130,.1);
+    overflow: hidden;
+    margin-top: -1px;
+    border: 1px solid #E5E5E5;
+}
+#showDetails1 label{
+    display: inline-block;
+    margin-right: 20px;
+}
+.selected{
+color: red;
+}
+.text{
+    font: bold 60px/1.5 '微软雅黑';
+    color: dodgerblue;
+    /*文本阴影*/
+    text-shadow: 10px 10px 50px #000;
+    /*text-shadow: 10px 10px 50px #000,-10px -10px 50px #f00;*/
+}

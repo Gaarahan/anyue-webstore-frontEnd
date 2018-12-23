@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>购物车</title>
+
+  <link rel="stylesheet" href="../resource/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styleSheet/cart/sc.css" />
+  <link rel="stylesheet" href="../styleSheet/common/topBar.css">
+</head>
+<body>
+<!--顶部栏-->
+<div class="navbar-top">
+  <div class="logo-container">
+    <div class="logo">
+    </div>
+    <div class="title">
+      <a href="/"><span>安悦商城</span></a><%= data.className %>
+    </div>
+  </div>
+  <div id="in-login"> </div>
+  <ul id="un-login">
+    <li class="navbar-register"><a id="register" href="./register.html">免费注册</a></li>
+    <li class="navbar-login"><a  id="login-state" href="./login.html">亲，请登录</a></li>
+  </ul>
+</div>
+<!--中间部分-->
+<div class='middle'>
+
+  <div id='m2'>
+    <ul>
+      <li><a href='#'  class="allProduct">我的购物车</a></li>
+    </ul>
+  </div>
+  <div id='m3'>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-1 "><img src="../resource/img/myCart/cartNotSelected.jpg" class="selectAll" alt="select-img">全选</div>
+        <div class="col-xs-5 ">商品</div>
+        <div class="col-xs-1">单价</div>
+        <div class="col-xs-2">数量</div>
+        <div class="col-xs-1">小计</div>
+        <div class="col-xs-1"></div>
+      </div>
+    </div>
+  </div>
+  <!--商品信息-->
+  <% for(let i=0;i<data.length;i++){%>
+  <div id='m4'  class="cartProductItemDIV">
+    <img src="../resource/img/myCart/cartNotSelected.jpg" class="selectSingle" alt="select-img">
+    <div class='c1'>
+      <img src="<%=data[i]['pictureAddr']%>" style="width: 94px; height: 76px" alt="good-img">
+    </div>
+    <div class='c2'>
+      <ul>
+        <li id="commName"><%=data[i]['commName']%></li>
+        <li id="commId" style="display: none"><%=data[i]['commId']%></li>
+        <li style="color:#03F">支持7天无理由退货</li>
+        <li>
+          <span>
+            <img src="../resource/img/myCart/serve.jpg"  alt="ser-img"/><a href="#">选服务</a>
+          </span>
+          <span>
+            <img src="../resource/img/myCart/package.jpg"  alt="box-img"/><a href="#">选包装</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class='c3'>
+      <ul>
+        <li>颜色:<%=data[i]['goodsColor']%></li>
+        <li>尺码:<%=data[i]['goodsSize']%></li>
+      </ul>
+    </div>
+    <div class='c4'>
+      <span class="presentPrice">￥<%=data[i]['commPrice']%></span>
+    </div>
+    <div class='c5'>
+      <label for="num-input"> </label>
+        <input value="<%=data[i]['goodsSum']%>" id="num-input" class="productNumberSet" readonly="readonly">
+    </div>
+    <div class='c6'>
+      <ul>
+        <li><span class="singleOrderSumPrice" style="font-size: 14px; font-weight: bold; color: #C40000; margin-left: 25px;">￥<%=data[i]['goodsAllMoney']%></span></li>
+      </ul>
+    </div>
+    <div class='c7'>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <%}%>
+  <div id='m5'>
+    <div class="c1">
+      <ul>
+        <li>
+          <img src="../resource/img/myCart/cartNotSelected.jpg" class="selectAll" alt="not-select">
+          全选</li>
+        <li><a href="#">删除选中的商品</a></li>
+        <li><a href="#">移到我的关注</a></li>
+        <li><a href="#" style="color:#000">清理购物车</a></li>
+      </ul>
+    </div>
+
+    <div class='c2'>
+      <ul>
+        <li id="LL">已选择<span class="productSum" style="font-weight: bold; color: #C40000;">0</span>件商品</li>
+        <li id='L0'>总价:</li>
+        <li id="L1" class="cartSumPrice" style="font-weight: bold;">￥0.00</li>
+        <li id='L2'><button class="settleButton" disabled="disabled" style="background-color:rgb(170, 170, 170);">去结算</button> </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<!--尾部-->
+<div id='footer'>
+  <div id='foot1'>
+    <ul>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>
+      <li>品类齐全，轻松购物</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>
+      <li>多仓直发，急速配送</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>
+      <li>正品行货，精致服务</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>
+      <li>天天低价，畅选无忧</li>
+    </ul>
+  </div>
+  <hr />
+  <div id='foot2'>
+    <ul>
+      <li>购物指南<li>
+      <li>配送方式</li>
+      <li>支付方式</li>
+      <li>售后服务</li>
+      <li>特色服务</li>
+      <li><a href="#">购物流程</a></li>
+      <li><a href="#">上门自提</a></li>
+      <li><a href="#">货到付款</a></li>
+      <li><a href="#">售后政策</a></li>
+      <li><a href="#">夺宝岛</a></li>
+
+      <li><a href="#">会员介绍</a></li>
+      <li><a href="#">211限时达</a></li>
+      <li><a href="#">在线支付</a></li>
+      <li><a href="#">价格保护</a></li>
+      <li><a href="#">DIY装机</a></li>
+
+      <li><a href="#">生活旅行/团购</a></li>
+      <li><a href="#">配送服务查询</a></li>
+      <li><a href="#">分期付款</a></li>
+      <li><a href="#">退款说明</a></li>
+      <li><a href="#">延保服务</a></li>
+
+      <li><a href="#">常见问题</a></li>
+      <li><a href="#">配送费收取标准</a></li>
+      <li><a href="#">邮局汇款</a></li>
+      <li><a href="#">返修/退换货</a></li>
+      <li><a href="#">安悦E卡</a></li>
+      <li><a href="#">大家电</a></li>
+      <li><a href="#">海外配送</a></li>
+      <li><a href="#">公司转账</a></li>
+      <li><a href="#">取消订单</a></li>
+      <li><a href="#">安悦通信</a></li>
+
+      <li><a href="#">联系客服</a></li>
+
+      <li><a href="#">安悦JD+</a></li>
+
+    </ul>
+  </div>
+  <hr />
+  <div id='foot3'>
+    <table>
+      <tr>
+        <td><a href="#">关于我们</a></td>
+        <td><a href="#">联系我们</a></td>
+        <td><a href="#">联系客服</a></td>
+        <td><a href="#">合作招商</a></td>
+        <td><a href="#">商家帮助</a></td>
+        <td><a href="#">营销中心</a></td>
+        <td><a href="#">手机安悦</a></td>
+        <td><a href="#">友情链接</a></td>
+        <td><a href="#">销售联盟</a></td>
+        <td><a href="#">安悦社区</a></td>
+        <td><a href="#">风险监测</a></td>
+        <td><a href="#">隐私政策</a></td>
+        <td><a href="#">安悦公益</a></td>
+        <td><a href="#">English Site</a></td>
+        <td><a href="#">Contact Us</a></td>
+      </tr>
+    </table>
+    <p><a href="#">京公网安备</a>&nbsp;|&nbsp;京ICP证070359&nbsp;|<a href="#">&nbsp;互联网药品信息服务资格证编号(京)-经营性-2014-0008&nbsp;</a>|&nbsp;新出发京零&nbsp;字第大120007号</p>
+
+    <p class="p1">互联网出版许可证编号新出网证(京)字150号&nbsp;<a href="#">|&nbsp;出版物许可证&nbsp;</a><a href="#">|&nbsp;网路文化经营许可证京网文[2014]2148-348号&nbsp;</a>|&nbsp;违法和不良信息举报电话:4006561155</p>
+    <p class="p2">Copynight&nbsp;@&nbsp;2004-2008&nbsp;安悦JD.com版权所有&nbsp;|&nbsp;消费者维权热线:4003994333&nbsp;&nbsp;<a href="#">经营证照</a></p>
+
+  </div>
+</div>
+<script src="../resource/jquery/jquery-3.3.1.min.js"></script>
+<script src="../javaScript/util/resolveToken.js"></script>
+<script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../javaScript/myCart/myCart.js"></script>
+</body>

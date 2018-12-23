@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(246,246,246);;
+}
+.new-floor {
+  width: 1230px;
+  margin: 60px auto 0;
+  /* background-color: #66afe9;*/
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,67 @@
+.register-form{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.form-title{
+  text-align: center;
+  margin: 15px;
+  font-size: 24px;
+}
+.form-group{
+  margin-bottom: 11px;
+}
+.form-group label{
+  display: block;
+  font-size: 17px;
+  height: 26px;
+}
+.form-group input{
+  background: transparent;
+  display: block;
+  border-bottom: rgba(174, 179, 189, 0.71) 2px solid;
+  outline: none;
+  width: 400px;
+  height: 30px;
+}
+.form-group select{
+  display: block;
+  width: 400px;
+  height: 30px;
+  background: none;
+}
+.form-group select:focus{
+  border: #ff5501 1px solid;
+  outline: none;
+}
+.form-group input:focus{
+  border-bottom: #ff5500 2px solid;
+}
+.form-group input[type=button]{
+  color: white;
+  margin-top: 15px;
+  height: 40px;
+  background: #e4393c;
+  border: none;
+  box-shadow: 2px 3px 3px #a18c81;
+}
+.form-group input[type=button]:focus{
+  border: none;
+}
+.form-group input[type=button]:hover{
+  box-shadow: 1px 1px 1px #a18c81;
+}
+
+/*提示*/
+.tips{
+  position: absolute;
+  left: 110%;
+  width: 100px;
+  font-size: 12px;
+  color: red;
+}
+.tips i{
+  margin-right: 10px;
+  color: #e4393c;
+}

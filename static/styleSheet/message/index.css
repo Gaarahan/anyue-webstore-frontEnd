@@ -1,0 +1,140 @@
+/*用户基本信息的样式*/
+.all-address,.base-info {
+    width: 840px;
+}
+.all-address {
+    display: none;
+}
+.base-user-info {
+    height: 40px;
+    margin-bottom: 10px;
+    padding-left: 45px;
+}
+.info-title,.info-content {
+    display: inline-flex;
+    height: 100%;
+    line-height: 40px;
+    font-size: 16px;
+}
+.info-title {
+    width: 80px;
+}
+label {
+    height: 100%;
+    line-height: 40px;
+}
+
+.user-info {
+    position: relative;
+    width: 870px;
+    margin: 10px auto;
+    padding-left: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+/*个人信息列表导航栏样式*/
+.nav-list {
+    background-color: #fff;
+    height: 38px;
+    margin-bottom: 30px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.all-nav-list li {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    vertical-align: bottom;
+    margin-right: 26px;
+    border-bottom: 2px solid transparent;
+}
+.all-nav-list li a,.info-title {
+    color: #999;
+}
+.all-nav-list li a:hover {
+    color: orangered;
+}
+span {
+    font-size: 15px;
+}
+
+
+/*地址管理样式*/
+.add-address {
+    height: 40px;
+
+}
+.address-info-list li {
+    width: 810px;
+    height: 164px;
+    border: 2px solid #8c8c8c;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.address,.edit{
+    margin-bottom: 0;
+}
+.edit {
+    text-align: right;
+}
+.delete-address,.edit-address {
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+/*弹出框样式*/
+#edit-info {
+    position: fixed;
+    display: none;
+    top: 0;
+    width: 100%;
+    opacity: .7;
+    background-color: #8c8c8c;
+}
+.edit-address-info {
+    display: none;
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 20px 0;
+    background-color: #fff;
+}
+.form-control {
+    width: 450px;
+}
+.confirm-add {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 127px;
+}
+.edit-out {
+    margin-top: 0;
+}
+.edit-out a {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 60px;
+    margin-right: 7px;
+    text-align: center;
+    line-height: 40px;
+    color: #000;
+}
+.edit-out a:hover {
+    color: orangered;
+}

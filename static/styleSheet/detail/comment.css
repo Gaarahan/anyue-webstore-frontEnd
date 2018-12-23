@@ -1,0 +1,114 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+/*评论导航栏    */
+#comment{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #cccccc;
+  box-shadow: 1px 3px 3px #cccccc;
+  background-color: #eeeeee;
+}
+.commentList{
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,0);
+  list-style: none;
+  margin: 0 auto;
+}
+.commentList:after{
+  content:"";
+  clear:both;
+  display: block;
+  visibility: hidden;
+}
+.commentList li{
+  float: left;
+}
+.commentList li label{
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px 15PX;
+  margin:0 15px;
+  display: inline-block;
+  cursor:pointer;
+}
+.commentList li input{
+  margin:5px 15px;
+  display: none;
+}
+/*评论列表*/
+#content{
+  width: 80%;
+  position: relative;
+  margin: 15px auto;
+}
+#contentList{
+  list-style: none;
+}
+#contentList li{
+  width: 90%;
+  height: 80px;
+  position: relative;
+  margin: 15px auto;
+  border-bottom: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px #cccccc;
+  /*background-color: #c0d7cb;.*/
+  background-color: #eeeeee;
+
+}
+#contentList li img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin:10px 40px;
+  display: inline;
+}
+#contentList li span{
+  position: absolute;
+  display: inline-block;
+  width: 80%;
+  top:50%;
+  transform: translate(0,-50%);
+  font-size: 15px;
+}
+.btn-all{
+  background-color: #f8f8ff;
+}
+.btn-good{
+  background-color: rgba(82, 255, 161, 0.36);
+}
+.btn-mid{
+  background-color: #ffef87;
+}
+.btn-low{
+  background-color: #ffb08e;
+}
+.btn-add{
+  background-color: #ecc2ff;
+}
+.btn-all:hover{
+  background-color: #c0d7cb;
+}
+.btn-good:hover{
+  background-color: #75eebc;
+}
+.btn-mid:hover{
+  background-color: #eecf73;
+}
+.btn-low:hover{
+  background-color: #ee837d;
+}
+.btn-add:hover{
+  background-color: #ba92ee;
+}

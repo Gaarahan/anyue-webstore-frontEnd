@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../resource/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../styleSheet/detail/detail.css">
+    <link rel="stylesheet" href="../styleSheet/common/topBar.css">
+    <link rel="stylesheet" href="../styleSheet/detail/comment.css">
+</head>
+<body>
+<!--顶部栏-->
+<div class="navbar-top">
+    <div class="logo-container">
+        <div class="logo">
+        </div>
+        <div class="title">
+            <a href="/"><span>安悦商城</span></a><%= data.className %>
+        </div>
+    </div>
+    <div id="in-login"> </div>
+    <ul id="un-login">
+        <li class="navbar-register"><a id="register" href="./register.html">免费注册</a></li>
+        <li class="navbar-login"><a  id="login-state" href="./login.html">亲，请登录</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <!--展示商品图片-->
+    <div class="imgCon">
+        <div class="box">
+            <div id="showImages" class="small">
+                <div class="mask"><img src="<%=data['allPicAddress'][0] %>" alt="goodImg"></div>
+                <div class="big"></div>
+                <div class="detail-div">
+                    <div class="detailShowCon">
+                        <% for(var i = 0; i < data['allPicAddress'].length;i++){%>
+                        <%  if(i === 0){%>
+                        <div class="detailShow select-active">
+                            <img src="<%=data['allPicAddress'][i]%>" alt="detailImg">
+                        </div>
+                        <%  }else{%>
+                        <div class="detailShow">
+                            <img src="<%=data['allPicAddress'][i]%>" alt="detailImg">
+                        </div>
+                        <%  }%>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--展示商品相关参数-->
+    <div class="messageCon">
+        <div id="goodId" style="display: none"><%=data['commId']%></div>
+        <div class="goodName">
+            <%=data['commName']%>
+        </div>
+        <div class="priceCon">
+            <div class="price">
+                <div class="price-text">现价</div>
+                <div class="price-num">
+                    <span class="p-price"><span>￥</span><span class="price"><%= data['commPrice'] %></span></span>
+                </div>
+            </div>
+            <div class="comment-pre">
+                <p class="comment">累计评价</p>
+                <span class="count">42万+</span>
+            </div>
+        </div>
+        <div class="typeCon">
+            <div class="sizeCon">
+                <span class="size-title">选择尺码</span>
+                <%for(i=0;i < data['allSizeList'].length;i++){
+                    if (i === 0) {%>
+                    <div class="size select-active"> <%=data['allSizeList'][i]%> </div>
+                    <%}else {%>
+                    <div class="size"> <%=data['allSizeList'][i]%>  </div>
+                    <%}
+                }%>
+            </div>
+            <div class="colorCon">
+                <span class="color-title">选择颜色</span>
+                <%for(i=0;i < data['allPicColor'].length;i++){
+                if (i === 0) {%>
+                    <div class="color select-active"><%=data['allPicColor'][i]%></div>
+                <%}else {%>
+                    <div class="color"><%=data['allPicColor'][i]%></div>
+                <%}
+                }%>
+            </div>
+            <div class="storeCon">
+                <span class="store-title">商品库存</span>
+                <%for(i=0;i < data['inventoryList'].length;i++){
+                if (i === 0) {%>
+                <div class="store"><%=data['inventoryList'][i]%></div>
+                <%}else {%>
+                <div class="store" style="display:none"><%=data['inventoryList'][i]%></div>
+                <%}
+                }%>
+            </div>
+            <div class="buyCon">
+                <form action="">
+                    <label>
+                        <span class="num-title">数量</span>
+                        <input type="text" id="input-num" readonly="readonly" required="required" value="1">
+                    </label>
+                    <input type="button" value="+" id="inc">
+                    <input type="button" value="-" id="dec">
+
+                    <div class="buyCon">
+                        <input type="button" value="加入购物车" id="add-cart">
+                        <input type="button" value="立即购买" id="buy-now">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="suggestCon">
+    <div id = "suggest">
+        <h4 class="sug-title">看了又看</h4>
+        <ul id="showSuggest">
+            <li ><img src="../resource/img/detail/l.jpg"  alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l1.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l2.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l3.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l4.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l5.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l6.jpg" alt="detailMes"/></li>
+            <li ><img src="../resource/img/detail/l7.jpg" alt="detailMes"/></li>
+        </ul>
+    </div>
+</div>
+
+<div id="container">
+    <div id="comment">
+        <div style="float: left;font-size: 21px;width: 50px;margin-left: 50px">评论</div>
+        <ul class="commentList">
+            <li>
+                <label for="all" class="btn-all">
+                    <input type="radio" id="all" name="comment_select">全部
+                </label>
+            </li>
+            <li>
+                <label for="good" class="btn-good">
+                    <input type="radio" id="good" name="comment_select">好评
+                </label>
+            </li>
+            <li>
+                <label for="mid" class="btn-mid">
+                    <input type="radio" id="mid" name="comment_select">中评
+                </label>
+            </li>
+            <li>
+                <label for="low" class="btn-low">
+                    <input type="radio" id="low" name="comment_select">差评
+                </label>
+            </li>
+            <li>
+                <label for="add" class="btn-add">
+                    <input type="radio" id="add" name="comment_select">追加
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <ul id="contentList">
+            <li class="good">
+                <img src="../resource/img/detailComment/2.jpg" alt="headPic">
+                <span>
+        我听不见彩虹 我听不见晚风,我听不见日夜 旋转的伏线我听不见线我听不见彩虹 我听不见晚风,我听不见日夜
+        </span>
+            </li>
+            <li class="mid">
+                <img src="../resource/img/detailComment/3.jpg" alt="headPic">
+                <span>
+        我听不见彩虹 我听不见晚风,我听不见日夜 旋转的伏线
+        </span>
+            </li>
+
+            <li  class="good">
+                <img src="../resource/img/detailComment/5.jpg" alt="headPic">
+                <span>
+                    可能我浪荡 让人家不安才会结果都阵亡我没有什麼阴影魔障你千万不要放在心上
+                </span>
+            </li>
+            <li>
+                <img src="../resource/img/detailComment/6.jpg" alt="headPic">
+                <span>
+                   1我听见了敲门声。 2我醒来了。 3我打开门，发现是你。 4我激动的把你抱起来。 顺序并不是1234，而是1342
+                </span>
+            </li>
+
+            <li  class="mid">
+                <img src="../resource/img/detailComment/7.jpg" alt="headPic">
+                <span>
+                    为了做你想做的事，你必须要做一些你不想做的事；忙碌的时候感觉特别好，所以人一定要前进啊！
+                </span>
+            </li>
+
+            <li class="low">
+                <img src="../resource/img/detailComment/8.jpg" alt="headPic">
+                <span>
+                    我听不见彩虹 我听不见晚风,我听不见日夜 旋转的伏线
+                </span>
+            </li>
+            <li class="add">
+                <img src="../resource/img/detailComment/5.jpg" alt="headPic">
+                <span>
+                    1我听见了敲门声。 2我醒来了。 3我打开门，发现是你。 4我激动的把你抱起来。 顺序并不是1234，而是1342
+                </span>
+            </li>
+            <li class="add">
+                <img src="../resource/img/detailComment/7.jpg" alt="headPic">
+                <span>
+                    可能我浪荡 让人家不安才会结果都阵亡我没有什麼阴影魔障你千万不要放在心上
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="../resource/jquery/jquery-3.3.1.min.js"></script>
+<script src="../javaScript/util/resolveToken.js"></script>
+<script src="../javaScript/detail/type-show.js"></script>
+<script src="../javaScript/detail/comment.js"></script>
+</body>
+</html>

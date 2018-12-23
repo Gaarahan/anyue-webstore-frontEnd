@@ -1,0 +1,237 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  min-width: 1330px;
+  max-width: 1350px;
+}
+
+.content{
+  display: inline-block;
+  float: left;
+}
+.content:after{
+  content: "";
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+/*展示商品图片*/
+.imgCon{
+  width: 350px;
+  margin-top: 30px;
+  float: left;
+  margin-left: 20px;
+}
+.mask{
+  border: 1px solid #cccccc;
+  width: 350px;
+  height: 350px;
+}
+.mask img{
+  width: 350px;
+  height: 350px;
+  display: block;
+}
+/*展示商品图片结束*/
+
+/*商品图片选择框*/
+.detail-div{
+  margin-top: 10px;
+  border: 1px solid #cccccc;
+  width: 350px;
+  height: 100px;
+  position: relative;
+}
+.left-btn,.right-btn{
+  height: 100%;
+  width: 25px;
+  line-height: 100px;
+  display: inline-block;
+  position: absolute;
+}
+.left-btn i,.right-btn i{
+  font-size: 24px;
+}
+.left-btn{
+  left: 0;
+}
+.right-btn{
+  right: 0;
+}
+.detailShowCon{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 75%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+}
+.detailShow{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  margin: 0 2px;
+}
+.detailShow img{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+/*商品图片选择框结束*/
+
+/*展示商品详情*/
+.messageCon{
+  border: 1px solid #cccccc;
+  width: 750px;
+  height: 462px;
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
+}
+.goodName{
+  font-size: 20px;
+  min-height: 35px;
+  padding: 0 20px;
+}
+.priceCon{
+  padding: 7px 8px;
+  margin: 4px;
+  background: #f3f3f3;
+}
+.price:after{
+  content: "";
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.price-text,.price-num{
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  line-height: 30px;
+}
+.p-price span:nth-child(1){
+  font-size: 21px;
+  margin: 0 5px 0 0;
+  color: #e4393c;
+}
+.p-price span:nth-child(2){
+  font-size: 26px;
+  color: #e4393c;
+}
+.comment-pre{
+  display: block;
+}
+/*展示商品详情结束*/
+
+/*选择商品*/
+.typeCon{
+  padding: 7px 8px;
+  margin: 4px;
+}
+.sizeCon,.colorCon,.buyCon,.storeCon{
+  padding: 2px;
+  margin: 2px;
+}
+.comment,.size-title,.color-title,.num-title,.store-title{
+  display: inline-block;
+  font-size: 13px;
+  color: #595959;
+  width: 52px;
+  margin-right: 10px;
+}
+.count{
+  display: inline-block;
+  font-style: italic;
+  font-size: 14px;
+  color: #6c6c6c;
+}
+.size{
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #ccc;
+  font-size: 17px;
+  text-align: center;
+  line-height: 30px;
+}
+.color{
+  border: 1px solid #cccccc;
+  display: inline-block;
+  width: 60px;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+}
+.store{
+  border: 1px solid #cccccc;
+  display: inline-block;
+  width: 60px;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+}
+.type-active{
+  border: 1px solid #cccccc;
+}
+#input-num{
+  width: 80px;
+  height: 20px;
+  font-size: 14px;
+}
+#inc,#dec{
+  font-size: 17px;
+  width: 26px;
+  height: 26px;
+}
+#dec{
+  display: none;
+}
+#add-cart,#buy-now{
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  background: #df3033;
+  position: relative;
+  top: 30px;
+  left: 40px;
+  width: 120px;
+  height: 45px;
+  margin-right: 20px;
+}
+/*选择商品结束*/
+
+/*建议商品*/
+.suggestCon{
+  width: 160px;
+  display: inline-block;
+  margin-right: 13px;
+  margin-top: 20px;
+  float: right;
+  position: relative;
+}
+.sug-title{
+  text-align: center;
+}
+/*建议商品结束*/
+
+/*评论展示*/
+#container{
+  display: inline-block;
+  position: relative;
+  width: 1112px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid #cccccc;
+  min-height:800px;
+}
+/*评论展示结束*/
+.select-active{
+  border: #e4393c 1px solid;
+}
